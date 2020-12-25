@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css?family=Archivo+Black");
+
+body {
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Helvetica Neue;
+    background-color: #a58fa6;
+}
+
+.form {
+    width: 20cm;
+    margin-top: 1em;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    padding: 45px;
+    background-color: #361e34;
+}
+
+.inputcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+button {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 5px 0px 5px 0px;
+    background-color: #A30327;
+}
+.post{
+    display: block;
+    margin: 0px;
+    width: 100%;
+}
+.submit{
+    margin: 10px;
+}
+.btn{
+    background-color: #A30327;
+    border: #72001A;
+}
+.btn:hover{
+    background-color: #72001A;
+    border: #A30327;
+}
+.nav{
+    background-color: #cecece;
+    margin: 10px 0px 10px 0px;
+}
+img{
+    width:75%
+}
+p{
+    color: white;
+}
