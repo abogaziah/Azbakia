@@ -17,6 +17,11 @@ class App extends React.Component {
 
     }
     submit(){
+        if(!this.state.name || !this.state.class){
+            alert("all fields are required")}
+        if (this.state.phone.length < 10 || !this.state.phone){
+            alert("provide correct phone number")
+        }
         let data ={
             name: this.state.name,
             phone: this.state.phone,
