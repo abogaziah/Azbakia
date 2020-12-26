@@ -18,20 +18,25 @@ class App extends React.Component {
     }
     submit(){
         if(!this.state.name || !this.state.class){
-            alert("all fields are required")}
-        if (this.state.phone.length < 10 || !this.state.phone){
+            alert("all fields are required")
+        }
+        else if (this.state.phone.length < 10 || !this.state.phone){
             alert("provide correct phone number")
         }
-        let data ={
-            name: this.state.name,
-            phone: this.state.phone,
-            class: this.state.class,
-            id: this.state.id
+        else{
+            let data ={
+                name: this.state.name,
+                phone: this.state.phone,
+                class: this.state.class,
+                id: this.state.id
+            }
+            fetch('/checkout', {
+                method: 'POST',
+                body:JSON.stringify(data)
+            }).then(response=>window.location.href = response.url)
+
         }
-        fetch('/checkout', {
-            method: 'POST',
-            body:JSON.stringify(data)
-        }).then(response=>window.location.href = response.url)
+
     }
     handler(name, id){
         this.setState({book:name, id:id})
