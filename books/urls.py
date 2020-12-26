@@ -6,4 +6,5 @@ urlpatterns = [
     path("getBooks", views.fetchBooks, name="get_books"),
     path("checkout", views.borrow, name="borrow"),
     path("thanks", views.thanks, name="thanks"),
+    path("getData", views.get_data, name="get_data")
 ]

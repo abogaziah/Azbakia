@@ -5,6 +5,8 @@ import json
 from django.db import IntegrityError
 from django.views.decorators.csrf import csrf_exempt
 from django.urls import reverse
+from django.http import HttpResponse
+from django.template import loader
 
 
 def index(request):
@@ -41,3 +43,24 @@ def borrow(request):
 
 def thanks(request):
     return render(request, "thanks.html")
+
+
+def get_data(request):
+    data = [('الإسم', 'الرقم', 'الفرقة', 'الكتاب')]
+    books = Book.objects.exclude(borrowed_by=None)
+    for book in books:
+        name = book.borrowed_by.name
+        phone = book.borrowed_by.phone
+        cls = book.borrowed_by.cls
+        title = book.title
+        response = (name, phone, cls, title)
+        data.append(response)
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="AzbakiaData.csv"'
+
+    t = loader.get_template('my_template_name.txt')
+    c = {'data': data}
+    response.write(t.render(c))
+    return response
+
+
