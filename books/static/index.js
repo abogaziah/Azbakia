@@ -6,7 +6,7 @@ class App extends React.Component {
             name : "",
             phone : 0,
             class : "",
-            book: "الكتاب: قم بالبحث او اختر من القائمة",
+            book: "الكتاب: قم بالبحث أو اختر من القائمة",
             id:0
         };
         this.submit = this.submit.bind(this);
